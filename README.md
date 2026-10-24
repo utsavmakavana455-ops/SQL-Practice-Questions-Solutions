@@ -1,1 +1,212 @@
-# SQL-Practice-Questions-Solutions
+# SQL Practice Questions & Solutions
+
+## 🟢 Beginner
+
+### 1. Display all employees
+
+```sql
+SELECT *
+FROM employees;
+```
+
+### 2. Find employees with a salary greater than 70,000
+
+```sql
+SELECT *
+FROM employees
+WHERE salary > 70000;
+```
+
+### 3. Display employee name and salary only
+
+```sql
+SELECT name, salary
+FROM employees;
+```
+
+### 4. Find employees who work in department 101
+
+```sql
+SELECT *
+FROM employees
+WHERE department_id = 101;
+```
+
+### 5. Display employees from highest salary to lowest salary
+
+```sql
+SELECT *
+FROM employees
+ORDER BY salary DESC;
+```
+
+### 6. Find employees hired after January 1, 2023
+
+```sql
+SELECT *
+FROM employees
+WHERE hire_date > '2023-01-01';
+```
+
+### 7. Find employees whose salary is between 60,000 and 80,000
+
+```sql
+SELECT *
+FROM employees
+WHERE salary BETWEEN 60000 AND 80000;
+```
+
+### 8. Find the total number of employees
+
+```sql
+SELECT COUNT(*) AS total_employees
+FROM employees;
+```
+
+---
+
+## 🟡 Intermediate
+
+### 9. Find the highest salary
+
+```sql
+SELECT MAX(salary) AS highest_salary
+FROM employees;
+```
+
+### 10. Find the lowest salary
+
+```sql
+SELECT MIN(salary) AS lowest_salary
+FROM employees;
+```
+
+### 11. Find the average salary of all employees
+
+```sql
+SELECT AVG(salary) AS average_salary
+FROM employees;
+```
+
+### 12. Find the number of employees in each department
+
+```sql
+SELECT
+    department_id,
+    COUNT(*) AS total_employees
+FROM employees
+GROUP BY department_id;
+```
+
+### 13. Find the average salary in each department
+
+```sql
+SELECT
+    department_id,
+    AVG(salary) AS average_salary
+FROM employees
+GROUP BY department_id;
+```
+
+### 14. Find departments that have more than 35 employees
+
+```sql
+SELECT
+    department_id,
+    COUNT(*) AS total_employees
+FROM employees
+GROUP BY department_id
+HAVING COUNT(*) > 35;
+```
+
+### 15. Find the highest salary in each department
+
+```sql
+SELECT
+    department_id,
+    MAX(salary) AS highest_salary
+FROM employees
+GROUP BY department_id;
+```
+
+---
+
+## 🔵 JOIN Practice
+
+### 16. Display employee name and department name
+
+```sql
+SELECT
+    e.name,
+    d.department_name
+FROM employees e
+JOIN departments d
+    ON e.department_id = d.department_id;
+```
+
+### 17. Display employee name, department name, and salary
+
+```sql
+SELECT
+    e.name,
+    d.department_name,
+    e.salary
+FROM employees e
+JOIN departments d
+    ON e.department_id = d.department_id;
+```
+
+### 18. Find the average salary by department name
+
+```sql
+SELECT
+    d.department_name,
+    AVG(e.salary) AS average_salary
+FROM employees e
+JOIN departments d
+    ON e.department_id = d.department_id
+GROUP BY d.department_name;
+```
+
+---
+
+## 🟠 Subquery Practice
+
+### 19. Find employees earning more than the overall average salary
+
+```sql
+SELECT *
+FROM employees
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employees
+);
+```
+
+### 20. Find employees earning the highest salary in the company
+
+```sql
+SELECT *
+FROM employees
+WHERE salary = (
+    SELECT MAX(salary)
+    FROM employees
+);
+```
+
+---
+
+## 📚 Concepts Covered
+
+- `SELECT`
+- `WHERE`
+- `BETWEEN`
+- `ORDER BY`
+- `COUNT()`
+- `MAX()`
+- `MIN()`
+- `AVG()`
+- `GROUP BY`
+- `HAVING`
+- `JOIN`
+- Subqueries
