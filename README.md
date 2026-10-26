@@ -1,6 +1,5 @@
 # SQL Practice Questions & Solutions
 
-## 🟢 Beginner
 
 ### 1. Display all employees
 
