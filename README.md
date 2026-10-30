@@ -130,8 +130,6 @@ GROUP BY department_id;
 
 ---
 
-## 🔵 JOIN Practice
-
 ### 16. Display employee name and department name
 
 ```sql
