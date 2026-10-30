@@ -167,8 +167,6 @@ GROUP BY d.department_name;
 
 ---
 
-## 🟠 Subquery Practice
-
 ### 19. Find employees earning more than the overall average salary
 
 ```sql
