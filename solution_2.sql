@@ -76,7 +76,7 @@ FROM employees
 GROUP BY department_id;
 
 
-#Subquery Practice
+
 #19. Find employees earning more than the overall average salary.
 SELECT *
 FROM employees
