@@ -64,7 +64,7 @@ FROM employees;
 
 ---
 
-## 🟡 Intermediate
+
 
 ### 9. Find the highest salary
 
